@@ -16,7 +16,7 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
       path: paths.output, // путь куда будет генериться сбандленный файл
       filename: "[name].[contenthash].js", // задаем имя сбандленного файла, name по умолчанию main, contenthash - хэш сумма генерируемая на базе содержимого файлов. Новые правки - новая хеш сумма
       clean: true, // автоочистка сбандленной папки для удаления предыдущих версий сборок
-      publicPath: "/",
+      publicPath: "",
     },
     plugins: buildPlugins(options), // плагины отвечают за бандл дополнительных типов файлов, при каждой пересборке плагины возвращают сбандленные файлы
     module: {

@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className={styles.navbar__logo}>
         <img
           className={styles.logo__img}
-          src="/img/pokedex-logo.png"
+          src="img/pokedex-logo.png"
           alt="Pokedex Logo"
         />
         <div className={styles.navbar__body}>

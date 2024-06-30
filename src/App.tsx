@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/view/Navbar/Navbar";
 import "./styles.scss";
-import { PokemonsListInterface } from "./model/transport/Transport";
 import { HomePage } from "./view/Pages/HomePage/HomePage";
 import { CaughtPage } from "./view/Pages/CaughtPage/CaughtPage";
 import NotFoundPage from "./view/Pages/NotFoundPage/NotFoundPage";
@@ -11,7 +9,7 @@ import Select from "./view/Pages/Select/Select";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Pokedex-app">
       <div className="App">
         <Routes>
           <Route path="/" element={<Navbar />}>
