@@ -1,0 +1,55 @@
+.navbar {
+  &__logo {
+    display: flex;
+    justify-content: space-evenly;
+    background: linear-gradient(0.25turn, #d30202, #ff6868, #d30202);
+    &__img {
+      width: 23%;
+      margin: 15px;
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__navlink {
+    font-size: 25px;
+    --speed: 0.5s;
+    padding: 0.35rem;
+    position: relative;
+    color: #fafafa;
+    text-decoration: none;
+    -webkit-clip-path: inset(-100% 0 -100% 0);
+    clip-path: inset(-100% 0 -100% 0);
+    display: inline-block;
+    transition: color var(--speed);
+    &:hover {
+      color: #f1c6c6;
+      --scale: 1;
+    }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: #ffffff;
+      transform: scaleX(var(--scale, 0));
+      transition: transform var(--speed);
+    }
+    &:after {
+      bottom: 100%;
+      left: 0;
+      transform-origin: 0 50%;
+    }
+    &:before {
+      top: 100%;
+      right: 0;
+      transform-origin: 100% 50%;
+    }
+    &__active {
+      --scale: 1;
+    }
+  }
+}

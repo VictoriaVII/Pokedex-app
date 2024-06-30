@@ -1,0 +1,138 @@
+.card {
+  transform-origin: top left;
+  transform: skewY(0deg) rotatez(0deg);
+  padding-top: 150%;
+  z-index: 1;
+  transition-property: z-index;
+  transition-duration: 0.3s;
+  &__body {
+    position: absolute;
+    z-index: 2;
+    width: 98%;
+    height: 95%;
+    top: 0;
+    border-radius: 2vw;
+    -webkit-filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+    transform: rotate(0deg) translate(0, 0);
+    transition-property: transform;
+    transition-duration: 0.3s;
+  }
+  &__img_wrapper {
+    position: absolute;
+    z-index: 3;
+    width: 88%;
+    height: 91%;
+    top: 0;
+    transform: translateX(6.5%) translateY(5%);
+    border-radius: 1.2vw;
+    background: #000000;
+    overflow: hidden;
+  }
+  &__name,
+  &__id,
+  &__img,
+  &__btn {
+    position: absolute;
+    z-index: 4;
+  }
+  &__name,
+  &__id {
+    background-color: inherit;
+    padding: 0.4em;
+  }
+  &__name {
+    top: 3%;
+    left: 4%;
+  }
+  &__id {
+    bottom: 3.5%;
+    right: 5%;
+    font-size: 1.2em;
+  }
+  &__img {
+    height: 60%;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%) translateY(-2%);
+    transition-property: height, transform;
+    transition-duration: 0.3s;
+  }
+  &:hover {
+    z-index: 4;
+  }
+  &:hover .card__body {
+    transform: rotate(0deg) translate(0%, 10%) scale(1.3);
+  }
+  &:hover .card__img {
+    height: 80%;
+    transform: translateX(-50%) translateY(10%);
+  }
+
+  &__btn {
+    bottom: 3.5%;
+    left: 5%;
+    border: 2px solid purple;
+    border-radius: 8px;
+
+    color: purple;
+    padding: 5px 10px;
+    margin: 10px;
+
+    transition: 0.5s;
+    &:hover {
+      background-color: purple;
+      color: white;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+    &:disabled {
+      cursor: auto;
+
+      background-color: purple;
+      color: white;
+      opacity: 0.5;
+      &:hover {
+        background-color: purple;
+        color: white;
+      }
+      &:active {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) {
+  .card__btn {
+    min-width: 20px;
+    padding: 3px 6px;
+    margin: 10px;
+    font-size: 10px;
+  }
+}
+@media (min-width: 500px) {
+  .card__btn {
+    min-width: 84px;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .card__btn {
+    min-width: 90px;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 17px;
+  }
+}
+@media (min-width: 1500px) {
+  .card__btn {
+    min-width: 120px;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 22px;
+  }
+}
